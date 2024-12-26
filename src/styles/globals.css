@@ -1,13 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 /*  */
 /*  General */
 :root {
@@ -24,7 +15,20 @@
   }
 }
 
-body {
+/*  */
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  background: none;
+  text-decoration: none;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,
@@ -32,6 +36,46 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+a, p, div, h1, h2, h3, h4, h5, h6, ul, ol, li, button, input, textarea, select, option {
+  font-family: "Funnel Sans", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  color: inherit;
+  background: none;
+  text-decoration: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, textarea, select {
+  color: inherit;
+  padding: 0;
+  margin: 0;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 /*  */
@@ -72,6 +116,7 @@ body {
   text-align: center;
   font-size: 3.5rem;
   font-weight: bold;
+  margin-bottom: 2rem;
 }
 
 /*  */
@@ -186,6 +231,11 @@ header {
   margin: 1rem;
 }
 
+.project-info.desc {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
 .project-info li {
   text-align: center;
   font-size: 1.15rem;
@@ -268,23 +318,41 @@ header {
   border: 1px solid white;
 }
 
-.option {
+.reasons {
   margin-top: 1rem;
   display: block;
   width: 100%;
-  border: 1px solid white;
+  /* border: 1px solid white; */
   color: rgb(0, 0, 0);
   border-radius: 0.5rem;
   padding: 0.5rem;
-  background-color: #ffffff;
+  background-color: #000000;
   font-size: 1.25rem;
   font-weight: bold;
   cursor: pointer;
 }
 
-option {
+.reason {
+  margin: 0.5rem auto;
+  display: block;
+  width: 100%;
+  border: 0px solid white;
   color: white;
   border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #333;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reason:hover {
+  background-color: #444;
+}
+
+.reason.enabled {
+  background-color: #070095;
 }
 
 .submit {

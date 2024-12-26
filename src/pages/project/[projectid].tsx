@@ -10,7 +10,7 @@ const ProjectDetail: React.FC<{ project: any }> = ({ project }) => {
       <section className="section">
         <div className="project-info">
           <h1 className="title">{project.title}</h1>
-          <p>{project.description}</p>
+          <p className="project-info desc">{project.description}</p>
           <div>
             <h2>Technologies Used</h2>
             <ul>
