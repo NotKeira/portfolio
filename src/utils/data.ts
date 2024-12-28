@@ -7,6 +7,15 @@ const projects = [
     technologies: ["React", "Node.js", "NextJS", "TypeScript"],
     link: "https://github.com/NotKeira/portfolio",
   },
+  
+  {
+    id: "prismal",
+    title: "Prismal Language",
+    description:
+      "I developed a programming language called Prismal. It is a statically typed language developed in C, and it is compiled to x86_64 assembly.",
+    technologies: ["C", "Assembly", "Programming Language", "Compiler"],
+    link: "https://github.com/NotKeira/prismal",
+  },
   {
     id: "robodactyl",
     title: "RoboDactyl",
