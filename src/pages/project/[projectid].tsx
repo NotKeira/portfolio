@@ -32,12 +32,11 @@ const ProjectDetail: React.FC<{ project: any }> = ({ project }) => {
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
-  //@ts-ignore
   const { projectid } = context.params || {};
   let project: any = null;
   if (projectid) {
     try {
-      project = await getProjectById(projectid as string);
+      project = await getProjectById(projectid as unknown as number);
     } catch (error) {
       console.error("Error fetching project data:", error);
     }

@@ -1,8 +1,13 @@
 import React from "react";
 import { Card, Layout } from "@/components/index";
-import projects from "@/utils/data";
-
+import { Project } from "@/types";
 const Projects: React.FC = () => {
+  const [projects, setProjects] = React.useState<Project[]>([]);
+  React.useEffect(() => {
+    fetch("/api/getData")
+      .then((res) => res.json())
+      .then((data) => setProjects(data.projects));
+  }, []);
   return (
     <Layout>
       <section className="section">

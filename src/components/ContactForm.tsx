@@ -13,17 +13,16 @@ const ContactForm: React.FC = () => {
         className="contact-form"
         onSubmit={async (e) => {
           e.preventDefault();
+          const form = e.currentTarget;
 
-          const formData = new FormData(e.currentTarget);
+          const formData = new FormData(form);
           const name = formData.get("name") as string;
           const email = formData.get("email") as string;
           const message = formData.get("message") as string;
 
           const res = await fetch("/api/hook", {
             method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
+            headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
               title: `Contact Form Submission from ${name}`,
               description: `**Reason:** ${selectedReason}\n**Email:** ${email}\n**Message:** ${message}`,
@@ -31,10 +30,16 @@ const ContactForm: React.FC = () => {
             }),
           });
 
-          if (res.ok) {
+          if (res.status === 429) {
+            alert(
+              "You've already submitted a form. Please wait 30 minutes before submitting again."
+            );
+          } else if (res.ok) {
             alert("Form submitted successfully!");
+            form.reset();
+            setSelectedReason(null);
           } else {
-            alert("Failed to submit form.");
+            alert("Failed to submit form. Please try again later.");
           }
         }}
       >

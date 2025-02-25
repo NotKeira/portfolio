@@ -7,16 +7,16 @@ const Home: React.FC = () => {
       <section className="section">
         <Name name="Keira Hopkins" />
         <p className="description">
-          Hi! I'm Keira. I'm an 18 year old self taught programmer from
-          Hampshire, England.
+          Hi! I'm Keira, an 18-year-old self-taught programmer from Hampshire,
+          England.
           <br />
-          I very first started programming back when I was around 7 years old, I
-          used Scratch and it felt right. I then went on to learn python around
-          the age 9 to 11, and ever since I've been trying to improve my
-          knowlege and ability to program.
+          I started programming when I was around seven years old, using
+          Scratch. Between the ages of 9 and 11, I moved on to Python, and since
+          then, I've been continuously working to expand my knowledge and
+          improve my programming skills.
           <br />
-          My main focus is on web development, but I also have experience in
-          game development, software engineering, and more.
+          My main focus is web development, but I also have experience in game
+          development, software engineering, and more.
         </p>
       </section>
     </Layout>
